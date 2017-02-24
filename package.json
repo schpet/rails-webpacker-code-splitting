@@ -2,7 +2,8 @@
   "name": "rails-webpack-code-splitting",
   "private": true,
   "dependencies": {
-    "cowsay-browser": "^1.1.8"
+    "cowsay-browser": "^1.1.8",
+    "jquery": "^3.1.1"
   },
   "devDependencies": {
     "babel-core": "^6.23.1",
