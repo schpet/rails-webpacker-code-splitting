@@ -1,1 +1,8 @@
 <h1>Fancy</h1>
+
+<%= link_to "Root", root_path %>
+
+<% content_for :head do %>
+  <%= javascript_pack_tag 'fancy', async: true, defer: true %>
+<% end %>
+
