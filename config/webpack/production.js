@@ -6,11 +6,12 @@ var merge   = require('webpack-merge')
 var sharedConfig = require('./shared.js')
 
 module.exports = merge(sharedConfig.config, {
-  output: { filename: '[name]-[hash].js' },
+  output: { filename: '[name]-[chunkhash].js' },
 
   plugins: [
     new webpack.LoaderOptionsPlugin({
       minimize: true
-    })
+    }),
+    new webpack.optimize.UglifyJsPlugin()
   ]
 })
