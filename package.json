@@ -3,7 +3,12 @@
   "private": true,
   "dependencies": {
     "cowsay-browser": "^1.1.8",
-    "jquery": "^3.1.1"
+    "css-loader": "^0.26.2",
+    "file-loader": "^0.10.1",
+    "jquery": "^3.1.1",
+    "jquery-ui": "^1.12.1",
+    "lodash": "^4.17.4",
+    "style-loader": "^0.13.2"
   },
   "devDependencies": {
     "babel-core": "^6.23.1",
