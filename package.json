@@ -2,25 +2,25 @@
   "name": "rails-webpack-code-splitting",
   "private": true,
   "dependencies": {
-    "cowsay-browser": "^1.1.8",
-    "css-loader": "^0.26.2",
-    "file-loader": "^0.10.1",
-    "jquery": "^3.1.1",
-    "jquery-ui": "^1.12.1",
-    "lodash": "^4.17.4",
-    "style-loader": "^0.13.2"
-  },
-  "devDependencies": {
     "babel-core": "^6.23.1",
     "babel-loader": "^6.3.2",
     "babel-preset-latest": "^6.22.0",
     "coffee-loader": "^0.7.2",
     "coffee-script": "^1.12.4",
+    "cowsay-browser": "^1.1.8",
+    "css-loader": "^0.26.2",
+    "file-loader": "^0.10.1",
     "glob": "^7.1.1",
+    "jquery": "^3.1.1",
+    "jquery-ui": "^1.12.1",
+    "lodash": "^4.17.4",
     "path-complete-extname": "^0.1.0",
     "rails-erb-loader": "^3.2.0",
+    "style-loader": "^0.13.2",
     "webpack": "^2.2.1",
-    "webpack-dev-server": "^2.4.1",
     "webpack-merge": "^3.0.0"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^2.4.1"
   }
 }
