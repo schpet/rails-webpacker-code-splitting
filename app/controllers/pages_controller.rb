@@ -4,4 +4,10 @@ class PagesController < ApplicationController
 
   def fancy
   end
+
+  def tooltip
+  end
+
+  def datepicker
+  end
 end
