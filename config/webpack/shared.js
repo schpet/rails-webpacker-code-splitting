@@ -11,16 +11,23 @@ if(distDir === undefined) {
   distDir = 'packs'
 }
 
-config = {
-  entry: glob.sync(path.join('app', 'javascript', 'packs', '*.js*')).reduce(
-    function(map, entry) {
-      var basename = path.basename(entry, extname(entry))
-      map[basename] = path.resolve(entry)
-      return map
-    }, {}
-  ),
+var packs = glob.sync(path.join('app', 'javascript', 'packs', '*.js*')).reduce(
+  function(map, entry) {
+    var basename = path.basename(entry, extname(entry))
+    map[basename] = path.resolve(entry)
+    return map
+  }, {}
+)
 
-  output: { filename: '[name].js', path: path.resolve('public', distDir) },
+config = {
+  // entry: packs,
+  entry: Object.assign({ vendor: ['lodash', 'cowsay-browser'] }, packs),
+
+  output: {
+    filename: '[name].js',
+    path: path.resolve('public', distDir),
+    publicPath: `/${distDir}/`
+  },
 
   module: {
     rules: [
@@ -44,11 +51,28 @@ config = {
           runner: 'DISABLE_SPRING=1 bin/rails runner'
         }
       },
+      { test: /\.css$/, use: [ 'style-loader', 'css-loader' ] },
+      {
+        test: /\.(jpg|png)$/,
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[hash].[ext]',
+        }
+      }
     ]
   },
 
   plugins: [
-    new webpack.EnvironmentPlugin(Object.keys(process.env))
+    new webpack.EnvironmentPlugin(Object.keys(process.env)),
+    new webpack.optimize.CommonsChunkPlugin({
+      names: ['vendor', 'manifest'],
+      minChunks: Infinity
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      children: true,
+      async: true,
+      minChunks: 2
+    })
   ],
 
   resolve: {

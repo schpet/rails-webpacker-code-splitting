@@ -7,5 +7,31 @@
 // layout file, like app/views/layouts/application.html.erb
 
 import logger from 'logger'
+import Foo from 'foo'
 
-logger('application.js loaded')
+new Foo()
+
+const datepickers = document.querySelectorAll('[data-datepicker]')
+if (datepickers.length) {
+  logger('datepickers found on page!')
+
+  require.ensure(['date-picker'], function(require) {
+    const datepicker = require('date-picker').default
+    datepicker(datepickers)
+  })
+} else {
+  logger('no datepickers on page')
+}
+
+const tooltips = document.querySelectorAll('[data-tooltip]')
+if (tooltips.length) {
+  logger('tooltips found on page!')
+
+  require.ensure(['tooltip'], function(require) {
+    const tooltip = require('tooltip').default
+    tooltip(tooltips)
+  })
+} else {
+  logger('no tooltips on page')
+}
+

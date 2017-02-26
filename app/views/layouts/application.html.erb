@@ -5,11 +5,13 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_pack_tag 'application', async: true, defer: true %>
-    <%= content_for :head %>
   </head>
 
   <body>
     <%= yield %>
+
+    <%= javascript_pack_tag 'manifest' %>
+    <%= javascript_pack_tag 'vendor' %>
+    <%= javascript_pack_tag 'application' %>
   </body>
 </html>
