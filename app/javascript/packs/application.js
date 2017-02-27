@@ -7,7 +7,7 @@
 // layout file, like app/views/layouts/application.html.erb
 
 import logger from 'logger'
-import Foo from 'foo'
+import Foo from 'Foo'
 
 new Foo()
 
