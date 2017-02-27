@@ -79,3 +79,32 @@ heroku buildpacks:set heroku/ruby --index 2
 heroku config:set NODE_ENV=production WEBPACK_ENV=production RACK_ENV=production RAILS_ENV=production RAILS_LOG_TO_STDOUT=enabled RAILS_SERVE_STATIC_FILES=enabled
 git push heroku master
 ```
+
+
+## Filesize stuff
+
+with a vendor chunk
+
+```
+total 584
+-rw-r--r--  1 schpet  staff   106K Feb 26 16:50 0-7a9b039224ba81bec731.js
+-rw-r--r--  1 schpet  staff    21K Feb 26 16:50 1-0d651986ba6420fec25d.js
+-rw-r--r--  1 schpet  staff    39K Feb 26 16:50 2-a4e9ef5ebeb657a7dbb3.js
+-rw-r--r--  1 schpet  staff   6.3K Feb 26 16:50 application-e56d9424e57fe23cad6c.js
+-rw-r--r--  1 schpet  staff   141B Feb 26 16:50 digests.json
+-rw-r--r--  1 schpet  staff   1.5K Feb 26 16:50 manifest-d5431b62e5dbb0f9b7ad.js
+drwxr-xr-x  3 schpet  staff   102B Feb 26 16:50 node_modules
+-rw-r--r--  1 schpet  staff   101K Feb 26 16:50 vendor-8b77afe5136e9241e6e7.js
+```
+
+without a vendor chunk, where tree shaking works:
+
+```
+total 432
+-rw-r--r--  1 schpet  staff   106K Feb 26 16:52 0-415d10138f7df60ccf99.js
+-rw-r--r--  1 schpet  staff    21K Feb 26 16:52 1-e5ecaeab4febc52c2df9.js
+-rw-r--r--  1 schpet  staff    39K Feb 26 16:52 2-1c7d26b064e0ea833f15.js
+-rw-r--r--  1 schpet  staff    39K Feb 26 16:52 application-8589f83f9bb3f8872cbd.js
+-rw-r--r--  1 schpet  staff    53B Feb 26 16:52 digests.json
+drwxr-xr-x  3 schpet  staff   102B Feb 26 16:52 node_modules
+```
