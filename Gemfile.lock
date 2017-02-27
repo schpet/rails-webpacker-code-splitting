@@ -10,7 +10,7 @@ GIT
 
 GIT
   remote: https://github.com/rails/webpacker.git
-  revision: 8a84ec2823f76adb97e3518ffc4c129650503fef
+  revision: e01eda8a18e6267740cd8722dc754bb188e674e8
   specs:
     webpacker (1.0)
       activesupport (>= 5.0)
@@ -69,9 +69,9 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    childprocess (0.6.1)
+    childprocess (0.6.2)
       ffi (~> 1.0, >= 1.0.11)
-    concurrent-ruby (1.0.4)
+    concurrent-ruby (1.0.5)
     debug_inspector (0.0.2)
     erubi (1.5.0)
     ffi (1.9.17)
@@ -135,7 +135,7 @@ GEM
     ruby_dep (1.5.0)
     rubyzip (1.2.1)
     sass (3.4.23)
-    selenium-webdriver (3.2.0)
+    selenium-webdriver (3.2.1)
       childprocess (~> 0.5)
       rubyzip (~> 1.0)
       websocket (~> 1.0)
@@ -178,6 +178,7 @@ DEPENDENCIES
   pg (~> 0.18)
   puma (~> 3.7)
   rails (~> 5.1.0.beta1)
+  railties (~> 5.1.0.beta1)
   sass-rails!
   selenium-webdriver
   spring
