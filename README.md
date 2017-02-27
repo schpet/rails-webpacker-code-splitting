@@ -6,6 +6,10 @@ this is an example rails 5.1 app, created with the --webpack flag:
 rails new rails-webpack-code-splitting --webpack -J -T -C -d=postgresql
 ```
 
+you can [see a
+diff](https://github.com/schpet/rails-webpacker-code-splitting/compare/43adfd98b896e467bc396826de2e4ddf119f1ac5...master)
+of this app vs the initial scaffolding.
+
 it features some tweaks to the webpack config to support the following things:
 
 - explicit vendor and manifest chunks to improve caching of infrequently
@@ -67,6 +71,9 @@ that aren't already loaded in `0-*.js`.
 
 
 ## Pushing to heroku
+
+Note: almost all the package.json dependencies are moved out of `devDependencies`,
+and into `dependencies` so that heroku is able to compile the app assets.
 
 Pushing this to heroku results in the buildpacks being in the wrong order. You
 can correct them, and make sure all the ENV vars are set, with the commands
